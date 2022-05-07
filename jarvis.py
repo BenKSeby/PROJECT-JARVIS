@@ -285,6 +285,13 @@ def initial_conversation():
     #             print("")
 
     # else
+    if "shutdown" in instruction:
+        engine.setProperty("rate", 140)
+        engine.say("shutting down")
+        print("shutting down....")
+        engine.runAndWait()
+        quit()
+        
     if "nothing" or "sleep" in instruction:
         engine.setProperty("rate", 140)
         engine.say("ok sir,turning on sleep mode....")
@@ -295,13 +302,6 @@ def initial_conversation():
         print("TURNED ON 'SLEEP MODE'. Jarvis will come back in five minutes")
         time.sleep(300)
         first1()
-
-    if "shutdown" in instruction:
-        engine.setProperty("rate", 140)
-        engine.say("shutting down")
-        print("shutting down....")
-        engine.runAndWait()
-        quit()
 
     else:
         engine.setProperty("rate", 140)
