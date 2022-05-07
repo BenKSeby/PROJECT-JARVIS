@@ -14,6 +14,7 @@
 ### pip install PyWhatkit
 ### pip install opencv-python
 ### pip install cv2
+### pip install os
 
 # if you use face recognition install these too
 ### pip install flask
