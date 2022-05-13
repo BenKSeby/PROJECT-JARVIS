@@ -1,0 +1,5 @@
+new update has been given to jarvis
+feature:
+       app_loader.py
+       this file helps to load any app in your pc
+       just say open app to jarvis and then specify the app
