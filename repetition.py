@@ -15,9 +15,11 @@ from whatsapp import *
 from camera import camera
 from weather import *
 from digital_clock import *
+from briya_birthday import *
 from repeat import first1
 import sys 
 from news import *
+from app_loader import *
 #from introduce_jarvis import introduction, invention
 
 engine = p.init()
@@ -246,6 +248,32 @@ def first():
             except sr.RequestError as e:
                 print("")
 
+    # open app
+    if "open app" in instruction:
+        engine.setProperty("rate", 140)
+        engine.say("which app would you like to open sir?")
+        engine.runAndWait()
+        print("which app ?")
+        app()
+
+    # # briya birthday
+    # r0 = sr.Recognizer()
+    # if "birthday" in instruction:
+    #     engine.setProperty("rate", 140)
+    #     engine.say("Happy birthday Ben's sister, Briya")
+    #     print("Happy birthday Ben's sister, Briya")
+    #     engine.runAndWait()
+    #     with sr.Microphone() as source0:
+    #         audio0 = r0.listen(source0)
+    #         try:
+    #             check = r0.recognize_google(audio0)
+    #             bot0 = Birthday()
+    #             bot0.play(check)
+    #         except sr.UnknownValueError:
+    #             print("")
+    #         except sr.RequestError as e:
+    #             print("")
+    
     # else
     if "shutdown" in instruction:
         engine.setProperty("rate", 140)
@@ -253,7 +281,7 @@ def first():
         print("shutting down....")
         engine.runAndWait()
         quit()
-        
+
     if "nothing" or "sleep" in instruction:
         engine.setProperty("rate", 140)
         engine.say("ok sir,turning on sleep mode....")

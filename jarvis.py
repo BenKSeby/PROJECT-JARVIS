@@ -1,6 +1,5 @@
 # import time
 
-from mimetypes import init
 import speech_recognition as sr
 import pyttsx3 as p
 from web_auto import *
@@ -15,8 +14,10 @@ from camera import camera
 import os
 from weather import *
 from digital_clock import *
+from briya_birthday import *
 from repeat import first1
 from news import *
+from app_loader import *
 #from introduce_jarvis import introduction, inventionim 
 import sys
 # os.system("cls")
@@ -264,7 +265,33 @@ def initial_conversation():
                 print("")
             except sr.RequestError as e:
                 print("")
-                
+
+    # open app
+    if "open app" in instruction:
+        engine.setProperty("rate", 140)
+        engine.say("which app would you like to open sir?")
+        engine.runAndWait()
+        print("which app ?")
+        app()
+
+    # # briya birthday
+    # r0 = sr.Recognizer()
+    # if "birthday" in instruction:
+    #     engine.setProperty("rate", 140)
+    #     engine.say("Happy birthday Ben's sister, Briya")
+    #     print("Happy birthday Ben's sister, Briya")
+    #     engine.runAndWait()
+    #     with sr.Microphone() as source0:
+    #         audio0 = r0.listen(source0)
+    #         try:
+    #             check = r0.recognize_google(audio0)
+    #             bot0 = Birthday()
+    #             bot0.play(check)
+    #         except sr.UnknownValueError:
+    #             print("")
+    #         except sr.RequestError as e:
+    #             print("")
+
     # else
     if "shutdown" in instruction:
         engine.setProperty("rate", 140)
@@ -272,7 +299,7 @@ def initial_conversation():
         print("shutting down....")
         engine.runAndWait()
         quit()
-        
+
     if "nothing" or "sleep" in instruction:
         engine.setProperty("rate", 140)
         engine.say("ok sir,turning on sleep mode....")
