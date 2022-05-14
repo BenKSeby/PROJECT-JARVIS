@@ -14,7 +14,6 @@ from camera import camera
 import os
 from weather import *
 from digital_clock import *
-from briya_birthday import *
 from repeat import first1
 from news import *
 from app_loader import *
@@ -290,24 +289,6 @@ def initial_conversation():
         engine.say("ok sir, stopping the timer")
         engine.runAndWait()
         timer_stopper()
-
-    # # briya birthday
-    # r0 = sr.Recognizer()
-    # if "birthday" in instruction:
-    #     engine.setProperty("rate", 140)
-    #     engine.say("Happy birthday Ben's sister, Briya")
-    #     print("Happy birthday Ben's sister, Briya")
-    #     engine.runAndWait()
-    #     with sr.Microphone() as source0:
-    #         audio0 = r0.listen(source0)
-    #         try:
-    #             check = r0.recognize_google(audio0)
-    #             bot0 = Birthday()
-    #             bot0.play(check)
-    #         except sr.UnknownValueError:
-    #             print("")
-    #         except sr.RequestError as e:
-    #             print("")
 
     # else
     if "shutdown" in instruction:
