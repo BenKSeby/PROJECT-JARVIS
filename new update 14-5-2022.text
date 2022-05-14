@@ -1,6 +1,8 @@
 new update!
 in this new feature update, i am adding a feature to set a timer and to stop it.
+second feature is that i have corrected the shutdown command to work correctly.
 features:
         timerloader
         timerstopper
-note:this feature only works for windows only and that is windows 10.
+        repeat.py
+note:the timer feature only works for windows only and that is windows 10.
