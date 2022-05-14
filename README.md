@@ -15,6 +15,7 @@
 ### pip install opencv-python
 ### pip install cv2
 ### pip install os
+### pip install pyautogui
 
 # if you use face recognition install these too
 ### pip install flask
