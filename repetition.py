@@ -3,6 +3,7 @@ import time
 
 import speech_recognition as sr
 import pyttsx3 as p
+from timerloader import timer_loader
 from web_auto import *
 from web_auto1 import *
 from web_automation import *
@@ -20,6 +21,8 @@ from repeat import first1
 import sys 
 from news import *
 from app_loader import *
+from timerloader import timer_loader
+from timerstopper import timer_stopper
 #from introduce_jarvis import introduction, invention
 
 engine = p.init()
@@ -255,6 +258,21 @@ def first():
         engine.runAndWait()
         print("which app ?")
         apploader()
+
+   # timer loader
+    if "set a timer" in instruction:
+        engine.setProperty("rate", 140)
+        engine.say("how many minutes would you like to set the timer sir?")
+        engine.runAndWait()
+        print("how many minutes ?")
+        timer_loader()
+
+    # timer stopper
+    if "stop timer" in instruction:
+        engine.setProperty("rate", 140)
+        engine.say("ok sir, stopping the timer")
+        engine.runAndWait()
+        timer_stopper()
 
     # # briya birthday
     # r0 = sr.Recognizer()

@@ -18,6 +18,8 @@ from briya_birthday import *
 from repeat import first1
 from news import *
 from app_loader import *
+from timerloader import timer_loader
+from timerstopper import timer_stopper
 #from introduce_jarvis import introduction, inventionim 
 import sys
 # os.system("cls")
@@ -273,6 +275,21 @@ def initial_conversation():
         engine.runAndWait()
         print("which app ?")
         apploader()
+
+    # timer loader
+    if "set a timer" in instruction:
+        engine.setProperty("rate", 140)
+        engine.say("how many minutes would you like to set the timer sir?")
+        engine.runAndWait()
+        print("how many minutes ?")
+        timer_loader()
+
+    # timer stopper
+    if "stop timer" in instruction:
+        engine.setProperty("rate", 140)
+        engine.say("ok sir, stopping the timer")
+        engine.runAndWait()
+        timer_stopper()
 
     # # briya birthday
     # r0 = sr.Recognizer()
