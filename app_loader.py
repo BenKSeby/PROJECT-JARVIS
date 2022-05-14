@@ -3,7 +3,7 @@ import speech_recognition as sr
 import pyttsx3 as p
 
 
-def app():
+def apploader():
     r2 = sr.Recognizer()
     with sr.Microphone() as source:
         r2.adjust_for_ambient_noise(source)
@@ -13,13 +13,13 @@ def app():
             print(instruction)
         except sr.UnknownValueError:
             print("err1 -- please say it again")
-            app()
+            apploader()
         except sr.RequestError as e:
             print("err2")
-            app()
+            apploader()
         except Exception as e:
             print("err3 -- please say it again")
-            app()
+            apploader()
     try:
         py.hotkey('winleft', 's')
         py.typewrite(instruction)
